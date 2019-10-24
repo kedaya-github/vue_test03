@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7991947-7fee-4936-a491-38bdac1dbebe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/MyBoot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/config/GlobalCorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/config/MvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/controller/GoodController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/dao/GoodMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/pojo/Good.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/czxy/service/GoodService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo04.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo05.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo06.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo07.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo08.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo09.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/demo11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/goods.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vue/axios-v0.19.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/vue/vue-2.6.10.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue_test03.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -109,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/demo10.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            <state relative-caret-position="360">
+              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -452,18 +423,25 @@
       <workItem from="1571657970359" duration="6186000" />
       <workItem from="1571701912626" duration="16427000" />
       <workItem from="1571788506919" duration="2235000" />
-      <workItem from="1571874719107" duration="1938000" />
+      <workItem from="1571874719107" duration="2533000" />
     </task>
+    <task id="LOCAL-00001" summary="vue学习中的测试项目03">
+      <created>1571876966332</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571876966332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36401000" />
+    <option name="totallyTimeSpent" value="36996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17811158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17811158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -502,6 +480,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="vue学习中的测试项目03" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue学习中的测试项目03" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/vue/vue-2.6.10.js">
@@ -699,8 +681,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/demo10.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="360">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
