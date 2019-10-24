@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件传递复杂数据</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <counter :users="users"></counter>
+</div>
+<script type="text/javascript">
+    //定义一个局部 组件
+    const counter = {
+        template : `
+            <div>
+                <ul>
+                    <li v-for="user in users">{{user.name}}---------{{user.age}}----------{{user.sex}}</li>
+                </ul>
+            </div>
+        `,
+        props:['users']
+    };
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            users:[
+                {name:"云龙",age:40,sex:"男"},
+                {name:"秀琴",age:40,sex:"女"}
+            ]
+        },
+        //注册组件
+        components:{
+            counter : counter
+        }
+    })
+</script>
+</body>
+</html>

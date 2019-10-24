@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子向父组件的传值</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <counter :students="students"></counter>
+</div>
+<script type="text/javascript">
+    //定义全局组件，实现 父向子传递数据， 并且子可以改变父的值
+    //当键盘 按起，就改变父组件的 msg值
+    Vue.component("counter",{
+        template : `
+            <div>
+                <table border="1">
+                    <tr>
+                        <th>名字</th>
+                        <th>语文</th>
+                        <th>数学</th>
+                        <th>英语</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr v-for="(student,index) in students">
+                        <td>{{student.name}}</td>
+                        <td>{{student.yuwen}}</td>
+                        <td>{{student.shuxue}}</td>
+                        <td>{{student.yingyu}}</td>
+                        <td><button @click="show(index)">show</button></td>
+                    </tr>
+                </table>
+            </div>
+        `,
+        methods:{
+            show(index){
+                //查看某个学生的 评论分  。 使用 index索引 获取students的 当前学生对象 计算平均分
+                alert(this.students[index].name + "的平均分是："+ ((this.students[index].yuwen + this.students[index].shuxue + this.students[index].yingyu)/3).toFixed(2))
+            }
+        },
+        props : ['students']  //定义属性
+    });
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            students : [
+                {name : "云龙" , yuwen : 80 , shuxue : 70 , yingyu : 60},
+                {name : "秀琴" , yuwen : 50 , shuxue : 50 , yingyu : 30},
+                {name : "孔捷" , yuwen : 65 , shuxue : 65 , yingyu : 25},
+                {name : "丁伟" , yuwen : 78 , shuxue : 45 , yingyu : 5}
+            ]
+        },
+        methods:{
+        }
+    })
+</script>
+</body>
+</html>

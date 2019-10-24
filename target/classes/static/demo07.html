@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子向父组件的传值</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    父组件的值：{{num}}
+<!--    子组件的调用标签，在父组件中-->
+<!--    inc  和 dec 事件，可以理解为转接方法，将 子组件的方法调用 ， 转移到 父组件中。 调用父组件的方法-->
+    子组件的值：<counter :mynum="num" @inc="addNum()" @dec="minusNum()"></counter>    <!-- 需要，如果子组件中的 mynum 值发生改变，那么改变的作用也发生在父组件num上 -->
+</div>
+<script type="text/javascript">
+    //定义一个局部 组件
+    const counter = {
+        template : `
+           <div>
+                {{mynum}}
+                   <button @click="add()">+</button>
+                   <button @click="minus()">-</button>
+           </div>
+        `,
+        methods:{
+            add(){
+                // this.mynum++;
+                //绑定一个转接的方法事件 ， 如果按钮进行点击触发，进入此方法
+                //将方法 转移 到父组件的  app 的div标签中。
+                this.$emit("inc");  //设置一个转移的事件方法 名称 . 绑定在组件的调用标签中。
+            },
+            minus(){
+                // this.mynum--;
+                this.$emit("dec")
+            }
+        },
+        props:['mynum']
+    };
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            num : 10
+        },
+        methods:{
+            addNum(){
+                this.num++;
+            },
+            minusNum(){
+                this.num--;
+            }
+        },
+        //注册组件
+        components:{
+            counter : counter
+        }
+    })
+</script>
+</body>
+</html>

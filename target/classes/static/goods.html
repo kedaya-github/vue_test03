@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品</title>
+    <script src="vue/vue-2.6.10.js"></script>
+    <script src="vue/axios-v0.19.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <table border="1" width="80%">
+        <tr>
+            <th>编号</th>
+            <th>名字</th>
+            <th>图片</th>
+            <th>价格</th>
+        </tr>
+        <tr v-for="good in goods">
+            <td>{{good.id}}</td>
+            <td>{{good.name}}</td>
+            <td width="10%"><img :src="good.image" width="100%"></td>
+            <td>{{good.price}}</td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            goods : [] , //存储数据
+        },
+        methods:{
+            findAll(){
+                axios.get("/good")
+                    .then(res => {
+                        this.goods = res.data;
+                    })
+                    .catch(res => {
+                        alert("服务器异常");
+                    })
+            }
+        },
+        created(){
+            this.findAll();
+        }
+    })
+</script>
+</body>
+</html>

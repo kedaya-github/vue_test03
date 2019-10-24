@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件的加深使用</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+
+<!--    调用全局组件，-->
+    <counter></counter>
+</div>
+
+
+<script type="text/javascript">
+
+    //创建全局组件
+    Vue.component("counter",{
+       template: `
+        <div>
+              {{num}}
+              <button @click="num++">+</button>
+              <button @click="num--">-</button>
+              ------------------------------------
+              <button @click="add()">+</button>
+        </div>
+       `,
+       data(){
+           return{
+               num : 1
+           }
+       },
+        methods:{
+            add(){
+                this.num++;
+            }
+        }
+    });
+
+
+
+    var vm = new Vue({
+        el:"#app",
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件遍历对象数组</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+
+<!--    使用组件时，注意大小写。 如果名称中有大写，改为小写，且在中间 加上  - 横杠  -->
+    <user-list></user-list>
+    <user-list></user-list>
+    <user-list></user-list>
+
+</div>
+<script type="text/javascript">
+
+    Vue.component("userList",{
+        template:`
+            <div>
+                <ul>
+                    <li v-for="user in users">{{user.name}}-----{{user.age}}</li>
+                </ul>
+            </div>
+        `,
+        data(){
+            return {
+                users:[
+                    {"name":"秀琴","age":30},
+                    {"name":"云龙","age":35},
+                    {"name":"丁伟","age":40},
+                    {"name":"孔泉","age":15},
+                ]  //用户数据
+            }
+        }
+
+
+
+    });
+
+    var vm = new Vue({
+        el:"#app",
+    })
+
+
+
+
+</script>
+</body>
+</html>

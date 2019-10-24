@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子向父组件的传值</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <counter @max="getMaxTwo"></counter>
+    最大值为: {{num}}
+</div>
+<script type="text/javascript">
+    //定义全局组件，实现 父向子传递数据， 并且子可以改变父的值
+    //当键盘 按起，就改变父组件的 msg值
+    Vue.component("counter",{
+        template : `
+            <div>
+                <input type="text" v-model="num1">  <br>
+                <input type="text" v-model="num2">  <br>
+                <button @click="getMax()">求最大值</button>
+            </div>
+        `,
+        data(){
+            return {
+                num1 : '',
+                num2 : '',
+            }
+        },
+        methods:{
+            getMax(){
+                //调用父组件的方法
+                this.$emit('max' , this.num1 , this.num2);
+            }
+        }
+    });
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            num : ''
+        },
+        methods:{
+            getMaxTwo(num1 , num2){
+                this.num = parseInt(num1) > parseInt(num2) ? num1 : num2;
+            }
+        }
+    })
+</script>
+</body>
+</html>

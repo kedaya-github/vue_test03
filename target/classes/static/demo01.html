@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试vue的全局组件</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+
+<!--    使用定义的全局组件，将组件的名称 用标签的形式，进行调用-->
+    <first></first>
+
+</div>
+
+<script type="text/javascript">
+    //定义全局组件，需要在new Vue对象之前
+    Vue.component("first",{
+        //template 组件中的 html数据展示 ， 必须要有一个 根标签
+        template:`
+            <div>Hello World</div>
+        `,
+        data(){     //data与 new Vue 有所不同。 data属于一个函数方法，里面必须有return {}  再其中来定义 属性值
+            return {
+                num:0   //里面填写的数据属性方法不变，
+            }
+        }
+    });
+
+    var vm = new Vue({
+        el:"#app",
+    })
+</script>
+
+
+</body>
+</html>

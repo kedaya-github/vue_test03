@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件的通信</title>
+    <script src="vue/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    给list的msg属性，进行赋值 vue对象的data数据  :msg为组件标签的属性 ， 数据msg 为vue实例对象的属性数据-->
+    <list :msg="msg"></list>
+</div>
+
+<script type="text/javascript">
+    //定义一个全局组件
+    //组件相当于， 子    。  子组件 可以调用 父组件中的数据
+    Vue.component("list",{
+        template : `
+            <div>
+                {{msg}}
+            </div>
+        `,
+        //定义一个 prop属性，为标签中 所具有的属性
+        props:["msg"]
+    });
+
+    //vue实例对象，相当于 父
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            "msg":"干干干！"
+        }
+    })
+</script>
+
+</body>
+</html>
