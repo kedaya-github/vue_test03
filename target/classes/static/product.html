@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品</title>
+    <script src="vue/vue-2.6.10.js"></script>
+    <script src="vue/axios-v0.19.0.js"></script>
+</head>
+<body>
+<div id="app">
+    <table border="1" width="80%">
+        <tr>
+            <th>编号</th>
+            <th>名字</th>
+            <th>价格</th>
+            <th>时间</th>
+            <th>图片</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="pro in pros">
+            <td>{{pro.pid}}</td>
+            <td>{{pro.pName}}</td>
+            <td>{{pro.price}}</td>
+            <td>{{pro.uploadTime}}</td>
+            <td width="120px"><img :src="pro.image" width="100%"></td>
+            <td width="20%"><a href="">添加</a> &nbsp; <a href="">修改</a> &nbsp; <a href="">删除</a></td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            pros : [],
+            product : {},
+        },
+        methods:{
+            findAll(){
+                axios.get("/product")
+                    .then(res => {
+                        this.pros = res.data;
+                    })
+                    .catch(res => {
+                        alert("服务器异常");
+                    })
+            }
+        },
+        created(){
+            this.findAll();
+        }
+
+
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

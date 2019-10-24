@@ -1,5 +1,8 @@
 package com.czxy.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -24,13 +27,15 @@ public class Product  implements Serializable {
 	private Integer pid;
 
    	@Column(name = "pname" )
-	private String pname;
+	private String pName;
 
    	@Column(name = "price" )
 	private Double price;
 
    	@Column(name = "upload_time" )
-	private Date upload_Time;
+	@JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss" , timezone = "GMT+8")
+	@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+	private Date uploadTime;
 
    	@Column(name = "image" )
 	private String image;
@@ -43,13 +48,7 @@ public class Product  implements Serializable {
 		this.pid = pid;
 	}
 
-	public String getPname() {
-		return this.pname;
-	}
 
-	public void setPname(String pname) {
-		this.pname = pname;
-	}
 
 	public Double getPrice() {
 		return this.price;
@@ -59,12 +58,20 @@ public class Product  implements Serializable {
 		this.price = price;
 	}
 
-	public Date getUpload_Time() {
-		return this.upload_Time;
+	public String getpName() {
+		return pName;
 	}
 
-	public void setUpload_Time(Date upload_Time) {
-		this.upload_Time = upload_Time;
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+
+	public Date getUploadTime() {
+		return uploadTime;
+	}
+
+	public void setUploadTime(Date uploadTime) {
+		this.uploadTime = uploadTime;
 	}
 
 	public String getImage() {
