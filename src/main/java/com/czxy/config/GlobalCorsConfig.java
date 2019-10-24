@@ -14,6 +14,13 @@ import org.springframework.web.filter.CorsFilter;
  */
 @Configuration
 public class GlobalCorsConfig {
+    /**
+     * @Author: kedaya
+     * @Description: CORS 解决跨域问题。
+     * @Date: 2019/10/24
+
+     * @return: org.springframework.web.filter.CorsFilter
+     **/
     @Bean
     public CorsFilter corsFilter() {
         //1.添加CORS配置信息
@@ -40,5 +47,6 @@ public class GlobalCorsConfig {
         //3.返回新的CorsFilter.
         return new CorsFilter(configSource);
     }
+
 }
 
